@@ -22,7 +22,7 @@ interface ResultCardProps {
   attempts: Attempt[];
   status: GameStatus;
   mode: GameMode;
-  dayNumber: number;
+  dateKey: string;
   onNextUnlimited: () => void;
   onSwitchToUnlimited: () => void;
 }
@@ -32,7 +32,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
   attempts,
   status,
   mode,
-  dayNumber,
+  dateKey,
   onNextUnlimited,
   onSwitchToUnlimited,
 }) => {
@@ -70,7 +70,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
   }, [mode]);
 
   const handleShare = async () => {
-    const text = formatShareText(dayNumber, attempts, status);
+    const text = formatShareText(dateKey, attempts, status);
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);

@@ -91,12 +91,19 @@ export function getRandomUnlimitedSong(
   return pool[randomIndex] || songs[0];
 }
 
+export function formatCzechDate(dateKey: string, includeYear = true): string {
+  const [y, m, d] = dateKey.split('-').map(Number);
+  if (!y || !m || !d) return dateKey;
+  return includeYear ? `${d}. ${m}. ${y}` : `${d}. ${m}.`;
+}
+
 export function formatShareText(
-  dayNumber: number,
+  dateKey: string,
   attempts: Attempt[],
   status: GameStatus
 ): string {
   const scoreStr = status === 'won' ? `${attempts.length}/6` : 'X/6';
+  const dateStr = formatCzechDate(dateKey, true);
   const boxes: string[] = [];
 
   for (let i = 0; i < MAX_ATTEMPTS; i++) {
@@ -112,7 +119,7 @@ export function formatShareText(
     }
   }
 
-  return `Sheendle #${dayNumber} 🎵 ${scoreStr}\n${boxes.join('')}`;
+  return `Sheendle (${dateStr}) 🎵 ${scoreStr}\n${boxes.join('')}`;
 }
 
 export function getInitialStats(): StatsData {

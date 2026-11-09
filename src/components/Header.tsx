@@ -5,7 +5,7 @@ import type { GameMode } from '../types';
 interface HeaderProps {
   mode: GameMode;
   onModeChange: (mode: GameMode) => void;
-  dayNumber: number;
+  dateLabel: string;
   dailyCompleted: boolean;
   onOpenStats: () => void;
   onOpenHelp: () => void;
@@ -14,7 +14,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   mode,
   onModeChange,
-  dayNumber,
+  dateLabel,
   dailyCompleted,
   onOpenStats,
   onOpenHelp,
@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({
               }`}
             >
               <Calendar className="w-3.5 h-3.5 shrink-0" />
-              <span>Denní #{dayNumber}</span>
+              <span>Denní ({dateLabel})</span>
               {dailyCompleted && (
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-300 shrink-0" />
               )}

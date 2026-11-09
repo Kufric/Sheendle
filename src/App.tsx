@@ -9,6 +9,7 @@ import type {
   StatsData,
 } from './types';
 import {
+  formatCzechDate,
   getDailySong,
   getDayNumber,
   getInitialStats,
@@ -276,7 +277,7 @@ export const App: React.FC = () => {
       <Header
         mode={mode}
         onModeChange={setMode}
-        dayNumber={dayNumber}
+        dateLabel={formatCzechDate(todayKey, false)}
         dailyCompleted={dailyState.status !== 'playing'}
         onOpenStats={() => setIsStatsOpen(true)}
         onOpenHelp={() => setIsHelpOpen(true)}
@@ -291,7 +292,7 @@ export const App: React.FC = () => {
               className="w-2 h-2 rounded-full inline-block shadow-[0_0_8px_var(--accent-glow-strong)]"
             />
             {mode === 'daily'
-              ? `Denní výzva #${dayNumber} • Stejný song pro všechny`
+              ? `Denní výzva • ${formatCzechDate(todayKey, true)} • Stejný song pro všechny`
               : 'Nekonečný mód • Trénuj na celé diskografii Viktora Sheena & BUKA'}
           </span>
           <span className="font-mono text-slate-500">
@@ -313,7 +314,7 @@ export const App: React.FC = () => {
             attempts={activeAttempts}
             status={activeStatus}
             mode={mode}
-            dayNumber={dayNumber}
+            dateKey={todayKey}
             onNextUnlimited={handleNextUnlimitedSong}
             onSwitchToUnlimited={() => setMode('unlimited')}
           />
