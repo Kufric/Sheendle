@@ -321,7 +321,7 @@ export const SongSearch: React.FC<SongSearchProps> = ({
                         )}
                       </div>
                       <p className="text-xs text-slate-400 truncate">
-                        {song.isFeat
+                        {song.isFeat || song.artist !== 'Viktor Sheen'
                           ? `${song.artist} • ${song.album} (${song.releaseYear})`
                           : `${song.album} • ${song.releaseYear}`}
                       </p>

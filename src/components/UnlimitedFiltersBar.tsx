@@ -39,14 +39,14 @@ export const UnlimitedFiltersBar: React.FC<UnlimitedFiltersBarProps> = ({
     {
       key: 'collabs',
       label: 'COLLABY',
-      subtitle: 'ROADTRIP & Asia',
+      subtitle: 'Společná alba',
       count: categoryCounts.collabs,
-      description: 'Společná alba s jinými interprety (Calin, Renne Dang)',
+      description: 'Společná alba s jinými interprety (ROADTRIP, Projekt Asia, Grál)',
     },
     {
       key: 'feats',
       label: 'FEATS',
-      subtitle: 'Hostovačky',
+      subtitle: 'Viktor na featu',
       count: categoryCounts.feats,
       description: 'Písničky ostatních interpretů, kde hostuje Viktor nebo BUKA',
     },

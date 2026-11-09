@@ -14,6 +14,7 @@ const STUDIO_ALBUM_COLLECTION_IDS = [
   1594405160, // Viktor Sheen - Příběhy a sny (16)
   1535027932, // Viktor Sheen - Barvy (16)
   1603464489, // Viktor Sheen - Černobílej svět (15)
+  1415525325, // Sheen & Jickson - Grál (13)
   1276025459, // Viktor Sheen - Jungler (13)
   1163618879, // Viktor Sheen - NSD (16)
   1008368655, // Viktor Sheen & Renne Dang - Projekt Asia (15)
@@ -37,6 +38,7 @@ const MAIN_OR_JOINT_ALBUMS = new Set([
   'pribehy a sny',
   'barvy',
   'cernobilej svet',
+  'gral',
   'jungler',
   'nsd',
   'projekt asia',
@@ -101,8 +103,12 @@ function isBukaTrack(item) {
 function isSheenTrack(item) {
   const artistNorm = stripDiacritics(item.artistName);
   const titleNorm = stripDiacritics(item.trackName);
+  const collectionNorm = stripDiacritics(item.collectionName);
   return (
     artistNorm.includes('viktor sheen') ||
+    artistNorm.includes('sheen & jickson') ||
+    artistNorm.includes('jickson & sheen') ||
+    (artistNorm.includes('sheen') && collectionNorm.includes('gral')) ||
     titleNorm.includes('viktor sheen')
   );
 }

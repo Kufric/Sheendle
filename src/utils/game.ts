@@ -91,7 +91,11 @@ export function isBukaSong(song: Song): boolean {
 
 export function isCollabSong(song: Song): boolean {
   const album = removeDiacritics(song.album || '');
-  return album.includes('roadtrip') || album.includes('projekt asia');
+  return (
+    album.includes('roadtrip') ||
+    album.includes('projekt asia') ||
+    album.includes('gral')
+  );
 }
 
 export function isFeatSong(song: Song): boolean {

@@ -94,7 +94,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           <p>
             Poslechni si krátkou ukázku písničky z diskografie{' '}
             <strong className="text-white">Viktora Sheena</strong> (včetně
-            společných projektů jako <em>ROADTRIP</em> nebo <em>Projekt Asia</em>)
+            společných projektů jako <em>ROADTRIP</em>, <em>Projekt Asia</em> nebo <em>Grál</em>)
             a zkus ji uhodnout na co nejméně pokusů.
           </p>
         </div>
