@@ -6,7 +6,7 @@
   "scripts": {
     "fetch-songs": "node scripts/fetch-songs.mjs",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && rm -rf docs && cp -R dist docs",
     "preview": "vite preview"
   },
   "dependencies": {
