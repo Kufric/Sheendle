@@ -241,7 +241,15 @@ async function main() {
     if (isLiveRecording(item)) return false;
 
     const titleLower = item.trackName.toLowerCase();
-    if (titleLower.includes('karaoke') || titleLower.includes('instrumental version')) {
+    const artistLower = (item.artistName || '').toLowerCase();
+    if (
+      titleLower.includes('karaoke') ||
+      titleLower.includes('instrumental version') ||
+      titleLower.includes('(cover)') ||
+      titleLower.endsWith('cover') ||
+      artistLower === 'laion' ||
+      artistLower === 'diedope'
+    ) {
       return false;
     }
 
