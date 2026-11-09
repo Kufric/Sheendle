@@ -1,4 +1,10 @@
-import type { Attempt, GameStatus, Song, StatsData } from '../types';
+import type { Attempt, GameStatus, Song, StatsData, UnlimitedFilters } from '../types';
+
+export const DEFAULT_UNLIMITED_FILTERS: UnlimitedFilters = {
+  buka: true,
+  collabs: true,
+  feats: true,
+};
 
 export const ATTEMPT_DURATIONS = [0.1, 0.5, 2.0, 4.0, 8.0, 15.0] as const;
 export const MAX_ATTEMPTS = 6;
@@ -72,6 +78,41 @@ export function getDailySong(songs: Song[], dateKey: string): Song {
   }
 
   return songs[indices[posInCycle]];
+}
+
+export function isBukaSong(song: Song): boolean {
+  const norm = removeDiacritics(`${song.artist} ${song.title} ${song.album}`);
+  return (
+    norm.includes('buka') ||
+    norm.includes('kristyna') ||
+    norm.includes('lil buca')
+  );
+}
+
+export function isCollabSong(song: Song): boolean {
+  const album = removeDiacritics(song.album || '');
+  return album.includes('roadtrip') || album.includes('projekt asia');
+}
+
+export function isFeatSong(song: Song): boolean {
+  return Boolean(song.isFeat);
+}
+
+export function isSongMatchingFilters(
+  song: Song,
+  filters: UnlimitedFilters
+): boolean {
+  if (!filters.buka && isBukaSong(song)) return false;
+  if (!filters.collabs && isCollabSong(song)) return false;
+  if (!filters.feats && isFeatSong(song)) return false;
+  return true;
+}
+
+export function getFilteredUnlimitedSongs(
+  songs: Song[],
+  filters: UnlimitedFilters
+): Song[] {
+  return songs.filter((s) => isSongMatchingFilters(s, filters));
 }
 
 export function getRandomUnlimitedSong(

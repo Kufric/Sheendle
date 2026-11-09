@@ -7,14 +7,21 @@ import type {
   GameStatus,
   Song,
   StatsData,
+  UnlimitedFilters,
 } from './types';
 import {
+  DEFAULT_UNLIMITED_FILTERS,
   formatCzechDate,
   getDailySong,
   getDayNumber,
+  getFilteredUnlimitedSongs,
   getInitialStats,
   getRandomUnlimitedSong,
   getTodayDateKey,
+  isBukaSong,
+  isCollabSong,
+  isFeatSong,
+  isSongMatchingFilters,
   MAX_ATTEMPTS,
 } from './utils/game';
 import { Header } from './components/Header';
@@ -24,11 +31,13 @@ import { SongSearch } from './components/SongSearch';
 import { ResultCard } from './components/ResultCard';
 import { StatsModal } from './components/StatsModal';
 import { HelpModal } from './components/HelpModal';
+import { UnlimitedFiltersBar } from './components/UnlimitedFiltersBar';
 
 const songs: Song[] = songsData as Song[];
 const DAILY_STORAGE_KEY = 'sheendle_daily_v1';
 const STATS_STORAGE_KEY = 'sheendle_stats_v1';
 const RECENT_UNLIMITED_KEY = 'sheendle_unlimited_recent_v1';
+const UNLIMITED_FILTERS_KEY = 'sheendle_unlimited_filters_v1';
 
 export const App: React.FC = () => {
   const todayKey = getTodayDateKey();
@@ -77,6 +86,40 @@ export const App: React.FC = () => {
     };
   });
 
+  // Unlimited filters state (default: all checked)
+  const [unlimitedFilters, setUnlimitedFilters] = useState<UnlimitedFilters>(() => {
+    try {
+      const raw = localStorage.getItem(UNLIMITED_FILTERS_KEY);
+      if (raw) {
+        return { ...DEFAULT_UNLIMITED_FILTERS, ...JSON.parse(raw) };
+      }
+    } catch {
+      // ignore corrupted storage
+    }
+    return DEFAULT_UNLIMITED_FILTERS;
+  });
+
+  // Filtered song pool for Unlimited mode
+  const filteredUnlimitedSongs = useMemo(
+    () => getFilteredUnlimitedSongs(songs, unlimitedFilters),
+    [unlimitedFilters]
+  );
+
+  // Category counts across entire database
+  const categoryCounts = useMemo(() => {
+    let buka = 0;
+    let collabs = 0;
+    let feats = 0;
+    let solo = 0;
+    for (const s of songs) {
+      if (isBukaSong(s)) buka++;
+      if (isCollabSong(s)) collabs++;
+      if (isFeatSong(s)) feats++;
+      if (!isBukaSong(s) && !isCollabSong(s) && !isFeatSong(s)) solo++;
+    }
+    return { buka, collabs, feats, solo };
+  }, []);
+
   // Unlimited game state
   const [recentUnlimitedIds, setRecentUnlimitedIds] = useState<number[]>(() => {
     try {
@@ -87,11 +130,24 @@ export const App: React.FC = () => {
     }
   });
 
-  const [unlimitedSong, setUnlimitedSong] = useState<Song>(() =>
-    getRandomUnlimitedSong(songs, recentUnlimitedIds, dailyTargetSong.id)
-  );
+  const [unlimitedSong, setUnlimitedSong] = useState<Song>(() => {
+    const initialPool = getFilteredUnlimitedSongs(songs, unlimitedFilters);
+    return getRandomUnlimitedSong(initialPool, recentUnlimitedIds, dailyTargetSong.id);
+  });
   const [unlimitedAttempts, setUnlimitedAttempts] = useState<Attempt[]>([]);
   const [unlimitedStatus, setUnlimitedStatus] = useState<GameStatus>('playing');
+
+  // Persist Unlimited filters
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        UNLIMITED_FILTERS_KEY,
+        JSON.stringify(unlimitedFilters)
+      );
+    } catch {
+      // ignore storage quota errors
+    }
+  }, [unlimitedFilters]);
 
   // Persist Daily state
   useEffect(() => {
@@ -238,16 +294,39 @@ export const App: React.FC = () => {
     commitAttempt({ type: 'skipped' });
   }, [activeStatus, commitAttempt]);
 
+  const handleToggleFilter = useCallback(
+    (key: keyof UnlimitedFilters) => {
+      setUnlimitedFilters((prev) => {
+        const next = { ...prev, [key]: !prev[key] };
+        const nextPool = getFilteredUnlimitedSongs(songs, next);
+
+        // If current song is now excluded by new filters, pick a new valid one immediately
+        if (!isSongMatchingFilters(unlimitedSong, next)) {
+          const nextSong = getRandomUnlimitedSong(
+            nextPool,
+            recentUnlimitedIds,
+            unlimitedSong.id
+          );
+          setUnlimitedSong(nextSong);
+          setUnlimitedAttempts([]);
+          setUnlimitedStatus('playing');
+        }
+        return next;
+      });
+    },
+    [recentUnlimitedIds, unlimitedSong]
+  );
+
   const handleNextUnlimitedSong = useCallback(() => {
     const nextSong = getRandomUnlimitedSong(
-      songs,
+      filteredUnlimitedSongs,
       recentUnlimitedIds,
       unlimitedSong.id
     );
     setUnlimitedSong(nextSong);
     setUnlimitedAttempts([]);
     setUnlimitedStatus('playing');
-  }, [recentUnlimitedIds, unlimitedSong.id]);
+  }, [filteredUnlimitedSongs, recentUnlimitedIds, unlimitedSong.id]);
 
   return (
     <div
@@ -293,12 +372,24 @@ export const App: React.FC = () => {
             />
             {mode === 'daily'
               ? `Denní výzva • ${formatCzechDate(todayKey, true)} • Stejný song pro všechny`
-              : 'Nekonečný mód • Trénuj na celé diskografii Viktora Sheena & BUKA'}
+              : 'Nekonečný mód • Trénuj bez omezení'}
           </span>
           <span className="font-mono text-slate-500">
-            {songs.length} tracků v databázi
+            {mode === 'daily'
+              ? `${songs.length} tracků v databázi`
+              : `${filteredUnlimitedSongs.length} tracků ve výběru`}
           </span>
         </div>
+
+        {/* Unlimited Mode Category Filters */}
+        {mode === 'unlimited' && (
+          <UnlimitedFiltersBar
+            filters={unlimitedFilters}
+            onChange={handleToggleFilter}
+            categoryCounts={categoryCounts}
+            totalActive={filteredUnlimitedSongs.length}
+          />
+        )}
 
         {/* 6 Attempt Slots */}
         <GuessList
@@ -331,7 +422,7 @@ export const App: React.FC = () => {
         {/* Search & Autocomplete Input */}
         {activeStatus === 'playing' && (
           <SongSearch
-            songs={songs}
+            songs={mode === 'daily' ? songs : filteredUnlimitedSongs}
             guessedSongIds={guessedSongIds}
             disabled={activeStatus !== 'playing'}
             onSubmitGuess={handleSubmitGuess}

@@ -19,6 +19,12 @@ export interface Attempt {
 
 export type GameMode = 'daily' | 'unlimited';
 
+export interface UnlimitedFilters {
+  buka: boolean;
+  collabs: boolean;
+  feats: boolean;
+}
+
 export type GameStatus = 'playing' | 'won' | 'lost';
 
 export interface DailyGameState {

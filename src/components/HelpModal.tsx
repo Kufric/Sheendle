@@ -132,7 +132,10 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
             </p>
             <p>
               <strong className="text-red-400">Nekonečný mód:</strong> Hraj bez
-              omezení náhodné tracky z celé diskografie pořád dokola (červený režim).
+              omezení náhodné tracky z celé diskografie (červený režim). Můžeš si
+              také odškrtnout kategorie <strong className="text-white">BUKA</strong>,{' '}
+              <strong className="text-white">COLLABY</strong> nebo{' '}
+              <strong className="text-white">FEATS</strong> a nechat si třeba jen sólo alba!
             </p>
           </div>
         </div>
