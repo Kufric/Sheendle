@@ -242,13 +242,15 @@ async function main() {
 
     const titleLower = item.trackName.toLowerCase();
     const artistLower = (item.artistName || '').toLowerCase();
+    const collectionLower = (item.collectionName || '').toLowerCase();
     if (
       titleLower.includes('karaoke') ||
       titleLower.includes('instrumental version') ||
       titleLower.includes('(cover)') ||
       titleLower.endsWith('cover') ||
       artistLower === 'laion' ||
-      artistLower === 'diedope'
+      artistLower === 'diedope' ||
+      (titleLower.includes('safír') && collectionLower.includes('karantena'))
     ) {
       return false;
     }
