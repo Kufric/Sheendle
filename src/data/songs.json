@@ -286,6 +286,17 @@
     "isFeat": false
   },
   {
+    "id": 1725216234,
+    "title": "Calin & Viktor Sheen - Safír (cover)",
+    "artist": "Laion",
+    "album": "Calin & Viktor Sheen - Safír (cover) (Singl)",
+    "releaseYear": 2024,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/41/be/a3/41bea376-0590-603a-78f6-c44a14f94fc3/1963625038966_cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b6/bb/ef/b6bbefca-4dbe-8faf-667a-a08f9559ce9c/mzaf_16639342090189049927.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/calin-viktor-sheen-saf%C3%ADr-cover/1725216233?i=1725216234&uo=4",
+    "isFeat": true
+  },
+  {
     "id": 1774287809,
     "title": "Cígo a káva (feat. Saul)",
     "artist": "Viktor Sheen",
@@ -432,7 +443,7 @@
     "id": 1740391271,
     "title": "až bude hořet",
     "artist": "Yzomandias, Viktor Sheen & RICO",
-    "album": "Paranoia - EP",
+    "album": "Paranoia",
     "releaseYear": 2024,
     "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b4/99/d7/b499d739-21c6-1431-74e0-3a35ee063b1e/24UMGIM41164.rgb.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5e/6a/ed/5e6aed52-f645-4f36-c8eb-6039005aab18/mzaf_10372526412525359972.plus.aac.p.m4a",
@@ -443,7 +454,7 @@
     "id": 1740391269,
     "title": "PARANOIA",
     "artist": "Yzomandias, Separ, Viktor Sheen, Nik Tendo, Karlo & P T K",
-    "album": "Paranoia - EP",
+    "album": "Paranoia",
     "releaseYear": 2024,
     "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b4/99/d7/b499d739-21c6-1431-74e0-3a35ee063b1e/24UMGIM41164.rgb.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/01/b7/c2/01b7c285-75dd-f9c3-6b89-77a15376f462/mzaf_10349593721483929870.plus.aac.p.m4a",
@@ -624,6 +635,28 @@
     "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/1a/20/c8/1a20c887-27de-2a60-d3f0-d8bf51bb7ca2/5054197842733.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c0/15/c3/c015c337-a6a4-bfec-e99b-220e8cdd090f/mzaf_4084663137352496272.plus.aac.p.m4a",
     "trackViewUrl": "https://music.apple.com/cz/album/probuzen%C3%AD/1711135571?i=1711135573&uo=4",
+    "isFeat": false
+  },
+  {
+    "id": 1711135979,
+    "title": "Sám proti sobě",
+    "artist": "Viktor Sheen",
+    "album": "Planeta opic",
+    "releaseYear": 2023,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/1a/20/c8/1a20c887-27de-2a60-d3f0-d8bf51bb7ca2/5054197842733.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d7/28/5a/d7285aef-4bd0-78e8-988f-297ad6e2d721/mzaf_17909254176717734211.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/s%C3%A1m-proti-sob%C4%9B/1711135571?i=1711135979&uo=4",
+    "isFeat": false
+  },
+  {
+    "id": 1711135981,
+    "title": "Světlo (feat. Calin)",
+    "artist": "Viktor Sheen",
+    "album": "Planeta opic",
+    "releaseYear": 2023,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/1a/20/c8/1a20c887-27de-2a60-d3f0-d8bf51bb7ca2/5054197842733.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b9/f8/b3/b9f8b3a3-a704-af59-52c1-3563f8507dbc/mzaf_15265806581286236292.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/sv%C4%9Btlo-feat-calin/1711135571?i=1711135981&uo=4",
     "isFeat": false
   },
   {
@@ -858,6 +891,17 @@
     "isFeat": true
   },
   {
+    "id": 1616689183,
+    "title": "Sangria (feat. Viktor Sheen)",
+    "artist": "Calin",
+    "album": "POPSTAR*",
+    "releaseYear": 2021,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ff/ea/82/ffea82ce-9c8c-a2e9-8ca5-99aa42f4db99/5054197139987.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8c/bc/40/8cbc405c-4dcd-fab9-3e25-64053902459e/mzaf_12686216447475403449.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/sangria-feat-viktor-sheen/1616688276?i=1616689183&uo=4",
+    "isFeat": true
+  },
+  {
     "id": 1594405605,
     "title": "Baby Shark (feat. Robin Zoot)",
     "artist": "Viktor Sheen",
@@ -888,6 +932,17 @@
     "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/cb/e9/51/cbe95142-24c3-3071-93b7-2be155ae20d4/190296350849.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/40/6f/1d/406f1d6e-5874-c904-ac91-5cdd932d4d89/mzaf_796630044836244084.plus.aac.p.m4a",
     "trackViewUrl": "https://music.apple.com/cz/album/co-lidi-ud%C4%9Blaj/1594405160?i=1594405382&uo=4",
+    "isFeat": false
+  },
+  {
+    "id": 1594405362,
+    "title": "Highway",
+    "artist": "Viktor Sheen",
+    "album": "Příběhy a sny",
+    "releaseYear": 2021,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/cb/e9/51/cbe95142-24c3-3071-93b7-2be155ae20d4/190296350849.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d7/58/47/d7584706-c8ce-ba33-a26e-4848d61620f2/mzaf_16154215003191386012.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/highway/1594405160?i=1594405362&uo=4",
     "isFeat": false
   },
   {
@@ -1009,6 +1064,17 @@
     "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/cb/e9/51/cbe95142-24c3-3071-93b7-2be155ae20d4/190296350849.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b4/4b/31/b44b3158-833d-ee67-0466-1f37ddc79d20/mzaf_11686996974411163574.plus.aac.p.m4a",
     "trackViewUrl": "https://music.apple.com/cz/album/virtu%C3%A1ln%C3%AD-drogy-feat-calin/1594405160?i=1594405692&uo=4",
+    "isFeat": false
+  },
+  {
+    "id": 1594405698,
+    "title": "Zzzpět (skit)",
+    "artist": "Viktor Sheen",
+    "album": "Příběhy a sny",
+    "releaseYear": 2021,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/cb/e9/51/cbe95142-24c3-3071-93b7-2be155ae20d4/190296350849.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/cb/87/63cb874a-b96c-80a4-eaa9-d74b50d3b664/mzaf_10675489760033555765.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/zzzp%C4%9Bt-skit/1594405160?i=1594405698&uo=4",
     "isFeat": false
   },
   {
@@ -1188,6 +1254,17 @@
     "isFeat": false
   },
   {
+    "id": 1506754439,
+    "title": "SAFÍR (feat. Viktor Sheen)",
+    "artist": "Konex & Decky",
+    "album": "KARANTENA PARTY",
+    "releaseYear": 2020,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/ca/59/d5/ca59d5cc-65d7-37f8-c717-d40a3828a30b/20UMGIM26891.rgb.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/38/9b/4e/389b4e0b-2298-0fef-4ba7-45bd0c809325/mzaf_1469221925784730815.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/saf%C3%ADr-feat-viktor-sheen/1506754216?i=1506754439&uo=4",
+    "isFeat": true
+  },
+  {
     "id": 1506749504,
     "title": "Oblivion (feat. Nik Tendo)",
     "artist": "Viktor Sheen",
@@ -1197,6 +1274,17 @@
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/65/42/0f/65420ffe-0037-bb6f-eceb-a2de233c320f/mzaf_3897430970295394161.plus.aac.p.m4a",
     "trackViewUrl": "https://music.apple.com/cz/album/oblivion-feat-nik-tendo/1506749500?i=1506749504&uo=4",
     "isFeat": false
+  },
+  {
+    "id": 1543011826,
+    "title": "OFFLINE (Viktor Sheen Remix)",
+    "artist": "DieDope",
+    "album": "OFFLINE (Viktor Sheen Remix) (Singl)",
+    "releaseYear": 2020,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/21/b8/e1/21b8e1b5-1d53-d0c7-9b80-dea6139655e9/artwork.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/13/ad/8d/13ad8ddf-5da6-c84a-cfcb-ecf2eba7fc28/mzaf_13967592339038128039.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/offline-viktor-sheen-remix/1543011825?i=1543011826&uo=4",
+    "isFeat": true
   },
   {
     "id": 1603464510,
@@ -1218,6 +1306,17 @@
     "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/36/b0/53/36b053d7-f157-4404-ba97-cd0fb95c2a40/190295384760.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c8/5f/c5/c85fc53f-827a-8f2a-6441-9e6e4ee63f32/mzaf_5545628089343324034.plus.aac.p.m4a",
     "trackViewUrl": "https://music.apple.com/cz/album/alkohol-a-molly/1603464489?i=1603464508&uo=4",
+    "isFeat": false
+  },
+  {
+    "id": 1603464506,
+    "title": "Andělé (Skit)",
+    "artist": "Viktor Sheen",
+    "album": "Černobílej svět",
+    "releaseYear": 2019,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/36/b0/53/36b053d7-f157-4404-ba97-cd0fb95c2a40/190295384760.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/3c/17/633c172c-c160-826c-2d49-89f8eefef537/mzaf_6190674897879949456.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/and%C4%9Bl%C3%A9-skit/1603464489?i=1603464506&uo=4",
     "isFeat": false
   },
   {
@@ -1298,6 +1397,17 @@
     "isFeat": false
   },
   {
+    "id": 1603464497,
+    "title": "Nápisy",
+    "artist": "Viktor Sheen",
+    "album": "Černobílej svět",
+    "releaseYear": 2019,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/36/b0/53/36b053d7-f157-4404-ba97-cd0fb95c2a40/190295384760.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c0/99/48/c099485b-9fa1-15f8-7baa-7879cb3c527d/mzaf_9556871292981146389.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/n%C3%A1pisy/1603464489?i=1603464497&uo=4",
+    "isFeat": false
+  },
+  {
     "id": 1603464511,
     "title": "Nekonečno",
     "artist": "Viktor Sheen",
@@ -1320,6 +1430,17 @@
     "isFeat": false
   },
   {
+    "id": 1603464499,
+    "title": "Rip (feat. Karlo)",
+    "artist": "Viktor Sheen",
+    "album": "Černobílej svět",
+    "releaseYear": 2019,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/36/b0/53/36b053d7-f157-4404-ba97-cd0fb95c2a40/190295384760.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1f/33/c2/1f33c2b7-0a51-d71b-f85d-559d856fdec0/mzaf_8086918328192949313.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/rip-feat-karlo/1603464489?i=1603464499&uo=4",
+    "isFeat": false
+  },
+  {
     "id": 1603464496,
     "title": "Zlato",
     "artist": "Viktor Sheen",
@@ -1329,6 +1450,94 @@
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8b/83/91/8b8391fd-8b00-549c-96cd-a7596671cccb/mzaf_12141440144837028557.plus.aac.p.m4a",
     "trackViewUrl": "https://music.apple.com/cz/album/zlato/1603464489?i=1603464496&uo=4",
     "isFeat": false
+  },
+  {
+    "id": 1473124895,
+    "title": "Vsaď Si (feat. Viktor Sheen)",
+    "artist": "Koky",
+    "album": "Da Kyko (EP)",
+    "releaseYear": 2019,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/49/00/5b/49005b7a-2f7e-226f-b058-612cf581ad00/19UMGIM66270.rgb.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a0/4a/9e/a04a9e7c-bd1c-9685-eb6a-e248445a08bb/mzaf_17933502571153286719.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/vsa%C4%8F-si-feat-viktor-sheen/1473124691?i=1473124895&uo=4",
+    "isFeat": true
+  },
+  {
+    "id": 1471520210,
+    "title": "Do Mýho Kruhu (feat. Viktor Sheen)",
+    "artist": "Nik Tendo",
+    "album": "Do Mýho Kruhu (feat. Viktor Sheen) (Singl)",
+    "releaseYear": 2019,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/48/f9/0c/48f90cc7-03fc-19b0-95ef-b60d289e26ad/19UMGIM62430.rgb.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/8b/36/bf/8b36bf98-d7dd-c4d7-522d-2e6eee5fac7a/mzaf_5825120961626368892.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/do-m%C3%BDho-kruhu-feat-viktor-sheen/1471520207?i=1471520210&uo=4",
+    "isFeat": true
+  },
+  {
+    "id": 1481316556,
+    "title": "KOUŘÍM JEN KDYŽ PIJU (feat. Viktor Sheen)",
+    "artist": "Decky",
+    "album": "KINGPIN",
+    "releaseYear": 2019,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9d/29/2e/9d292e3e-414d-67bb-287b-90a4bc73a68d/19UMGIM87533.rgb.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/60/2f/80/602f803e-374d-ea04-95af-0f1ff57d7e2a/mzaf_8729803394501241145.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/kou%C5%99%C3%ADm-jen-kdy%C5%BE-piju-feat-viktor-sheen/1481316340?i=1481316556&uo=4",
+    "isFeat": true
+  },
+  {
+    "id": 1401594436,
+    "title": "Nevolej mi (feat. Decky & Viktor Sheen)",
+    "artist": "Nik Tendo",
+    "album": "7",
+    "releaseYear": 2018,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/84/73/79/847379c0-563c-bd0e-3665-03fd743095da/00602567857624.rgb.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e4/9b/2f/e49b2f2b-9bfb-e591-74d0-c15ae287d5da/mzaf_10513815258412615580.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/nevolej-mi-feat-decky-viktor-sheen/1401591471?i=1401594436&uo=4",
+    "isFeat": true
+  },
+  {
+    "id": 1401595710,
+    "title": "Sid & Nancy (feat. Viktor Sheen)",
+    "artist": "Nik Tendo",
+    "album": "7",
+    "releaseYear": 2018,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/84/73/79/847379c0-563c-bd0e-3665-03fd743095da/00602567857624.rgb.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/46/2b/8b/462b8bdb-6b76-92da-7e62-73d96661da3f/mzaf_6122451925687168161.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/sid-nancy-feat-viktor-sheen/1401591471?i=1401595710&uo=4",
+    "isFeat": true
+  },
+  {
+    "id": 1393235286,
+    "title": "Proudy (feat. Viktor Sheen)",
+    "artist": "SpecialBeatz",
+    "album": "Barter",
+    "releaseYear": 2018,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/d7/4d/e5/d74de5ed-de94-aceb-1c96-fc2e551017dd/859727001841_cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/b4/bd/87/b4bd8788-ccbb-c2e7-d6d5-cc8e91897c90/mzaf_18176052524896664300.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/proudy-feat-viktor-sheen/1393234635?i=1393235286&uo=4",
+    "isFeat": true
+  },
+  {
+    "id": 1443790517,
+    "title": "PŘIDEJ (feat. Nik Tendo, Yzomandias & Viktor Sheen)",
+    "artist": "Milion Plus",
+    "album": "KRTEK MONEY LIFE",
+    "releaseYear": 2018,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/2b/af/13/2baf1381-30c8-5e30-104e-5196f195cade/00602577340932.rgb.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/fb/18/9a/fb189a7b-d02b-642c-ba4b-2ed187bd04d0/mzaf_17998669649946660810.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/p%C5%99idej-feat-nik-tendo-yzomandias-viktor-sheen/1443790455?i=1443790517&uo=4",
+    "isFeat": true
+  },
+  {
+    "id": 1443790512,
+    "title": "VZDUŠNÝ ZÁMKY (feat. Nik Tendo, Hasan, Koky, Yzomandias & Viktor Sheen)",
+    "artist": "Milion Plus",
+    "album": "KRTEK MONEY LIFE",
+    "releaseYear": 2018,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/2b/af/13/2baf1381-30c8-5e30-104e-5196f195cade/00602577340932.rgb.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8b/e1/39/8be1394e-3621-2a29-6989-eb97e2a27f69/mzaf_15774625784038747933.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/vzdu%C5%A1n%C3%BD-z%C3%A1mky-feat-nik-tendo-hasan-koky-yzomandias/1443790455?i=1443790512&uo=4",
+    "isFeat": true
   },
   {
     "id": 1276025462,
@@ -1650,6 +1859,17 @@
     "isFeat": false
   },
   {
+    "id": 1189301842,
+    "title": "Tma (feat. Viktor Sheen)",
+    "artist": "DJ Wich",
+    "album": "Veni, Vidi, Wich",
+    "releaseYear": 2016,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music111/v4/f8/22/8e/f8228e15-2236-2154-0678-6696dcad7794/859719062188_cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d9/31/14/d93114d8-c9a3-c70d-53f3-2d57a476b3ab/mzaf_1797755256573443173.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/tma-feat-viktor-sheen/1189300737?i=1189301842&uo=4",
+    "isFeat": true
+  },
+  {
     "id": 1008368930,
     "title": "Blakklist (feat. 1210 Symphony)",
     "artist": "Viktor Sheen & Renne Dang",
@@ -1738,6 +1958,17 @@
     "isFeat": false
   },
   {
+    "id": 1008368668,
+    "title": "Intro",
+    "artist": "Viktor Sheen & Renne Dang",
+    "album": "Projekt Asia",
+    "releaseYear": 2015,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music1/v4/e1/29/5f/e1295ff6-9195-8092-9965-823c48eb3ca3/8595600500101_cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/43/39/7c/43397c47-cb36-25e8-235c-ce4ca85cc2b6/mzaf_1686131087933306247.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/intro/1008368655?i=1008368668&uo=4",
+    "isFeat": false
+  },
+  {
     "id": 1008368933,
     "title": "Každej Den",
     "artist": "Viktor Sheen & Renne Dang",
@@ -1793,6 +2024,17 @@
     "isFeat": false
   },
   {
+    "id": 1008368922,
+    "title": "Skit",
+    "artist": "Viktor Sheen & Renne Dang",
+    "album": "Projekt Asia",
+    "releaseYear": 2015,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music1/v4/e1/29/5f/e1295ff6-9195-8092-9965-823c48eb3ca3/8595600500101_cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/eb/d3/67/ebd3671d-d2ca-99cf-2d8c-f211eefc3d4a/mzaf_990703694132258023.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/skit/1008368655?i=1008368922&uo=4",
+    "isFeat": false
+  },
+  {
     "id": 1008368672,
     "title": "Stereotyp",
     "artist": "Viktor Sheen & Renne Dang",
@@ -1815,6 +2057,39 @@
     "isFeat": false
   },
   {
+    "id": 1163618832,
+    "title": "A Co Dál",
+    "artist": "Viktor Sheen",
+    "album": "Level Up",
+    "releaseYear": 2014,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/f0/ad/09/f0ad094b-65d3-bcf4-da20-9ec5f1a63418/cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ff/e3/79/ffe37989-c307-0249-9cbb-626a3470e617/mzaf_3900762343387886418.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/a-co-d%C3%A1l/1163618803?i=1163618832&uo=4",
+    "isFeat": false
+  },
+  {
+    "id": 1163618816,
+    "title": "Fastlife (feat. Fosco Alma)",
+    "artist": "Viktor Sheen",
+    "album": "Level Up",
+    "releaseYear": 2014,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/f0/ad/09/f0ad094b-65d3-bcf4-da20-9ec5f1a63418/cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/21/43/46/21434629-2fe6-38c4-f2ff-0e6691cde4e2/mzaf_7241337101594379313.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/fastlife-feat-fosco-alma/1163618803?i=1163618816&uo=4",
+    "isFeat": false
+  },
+  {
+    "id": 1163618806,
+    "title": "Jenom Já",
+    "artist": "Viktor Sheen",
+    "album": "Level Up",
+    "releaseYear": 2014,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/f0/ad/09/f0ad094b-65d3-bcf4-da20-9ec5f1a63418/cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/75/da/c9/75dac949-fce2-522f-ea78-ab0e3f223ff6/mzaf_11408190639168647834.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/jenom-j%C3%A1/1163618803?i=1163618806&uo=4",
+    "isFeat": false
+  },
+  {
     "id": 1163618821,
     "title": "Klid",
     "artist": "Viktor Sheen",
@@ -1823,6 +2098,50 @@
     "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/f0/ad/09/f0ad094b-65d3-bcf4-da20-9ec5f1a63418/cover.jpg/600x600bb.jpg",
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/91/4e/58/914e5825-3ceb-399e-7585-0b82ff74db73/mzaf_1660024487180647774.plus.aac.p.m4a",
     "trackViewUrl": "https://music.apple.com/cz/album/klid/1163618803?i=1163618821&uo=4",
+    "isFeat": false
+  },
+  {
+    "id": 1163618805,
+    "title": "Level Up (feat. LD)",
+    "artist": "Viktor Sheen",
+    "album": "Level Up",
+    "releaseYear": 2014,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/f0/ad/09/f0ad094b-65d3-bcf4-da20-9ec5f1a63418/cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/e1/c3/b2/e1c3b21e-d7e4-94b5-d2ce-c7cee2be44fe/mzaf_12015129087595991356.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/level-up-feat-ld/1163618803?i=1163618805&uo=4",
+    "isFeat": false
+  },
+  {
+    "id": 1163618818,
+    "title": "Rave (feat. Renne Dang)",
+    "artist": "Viktor Sheen",
+    "album": "Level Up",
+    "releaseYear": 2014,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/f0/ad/09/f0ad094b-65d3-bcf4-da20-9ec5f1a63418/cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ce/83/0c/ce830c78-e036-abec-2b72-e04eff2a61fe/mzaf_17589074438684150932.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/rave-feat-renne-dang/1163618803?i=1163618818&uo=4",
+    "isFeat": false
+  },
+  {
+    "id": 1163618819,
+    "title": "Roky (feat. Sharlota)",
+    "artist": "Viktor Sheen",
+    "album": "Level Up",
+    "releaseYear": 2014,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/f0/ad/09/f0ad094b-65d3-bcf4-da20-9ec5f1a63418/cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/64/b6/49/64b6492f-e24b-532a-3fe1-2b374b71246d/mzaf_18376887233274070354.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/roky-feat-sharlota/1163618803?i=1163618819&uo=4",
+    "isFeat": false
+  },
+  {
+    "id": 1163618820,
+    "title": "Stripclub",
+    "artist": "Viktor Sheen",
+    "album": "Level Up",
+    "releaseYear": 2014,
+    "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music71/v4/f0/ad/09/f0ad094b-65d3-bcf4-da20-9ec5f1a63418/cover.jpg/600x600bb.jpg",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a1/e1/db/a1e1dbd4-8d02-af4d-2229-88233ffb4130/mzaf_16251418049240109392.plus.aac.p.m4a",
+    "trackViewUrl": "https://music.apple.com/cz/album/stripclub/1163618803?i=1163618820&uo=4",
     "isFeat": false
   }
 ]
