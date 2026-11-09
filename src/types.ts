@@ -7,6 +7,7 @@ export interface Song {
   artworkUrl: string;
   previewUrl: string;
   trackViewUrl: string;
+  isFeat?: boolean;
 }
 
 export type AttemptType = 'wrong' | 'skipped' | 'correct';

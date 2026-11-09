@@ -136,10 +136,17 @@ export const ResultCard: React.FC<ResultCardProps> = ({
         </div>
 
         <div className="flex-1 text-center sm:text-left min-w-0 space-y-2">
-          <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[var(--accent-surface-strong)] text-[var(--accent-pale)] border border-[var(--accent-border)]">
-            <Headphones className="w-3 h-3" />
-            Hledaný track
-          </span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[var(--accent-surface-strong)] text-[var(--accent-pale)] border border-[var(--accent-border)]">
+              <Headphones className="w-3 h-3" />
+              Hledaný track
+            </span>
+            {song.isFeat && (
+              <span className="inline-flex items-center text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/10 text-white border border-white/20">
+                Feat
+              </span>
+            )}
+          </div>
 
           <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight break-words">
             {song.title}

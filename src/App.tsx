@@ -282,7 +282,7 @@ export const App: React.FC = () => {
         onOpenHelp={() => setIsHelpOpen(true)}
       />
 
-      <main className="relative z-10 flex-1 w-full max-w-2xl mx-auto px-4 py-6 sm:py-8 flex flex-col gap-5">
+      <main className="relative z-20 flex-1 w-full max-w-2xl mx-auto px-4 py-6 sm:py-8 flex flex-col gap-5">
         {/* Mode Subheader Banner */}
         <div className="flex items-center justify-between text-xs text-slate-400 px-1">
           <span className="flex items-center gap-2">
@@ -292,7 +292,7 @@ export const App: React.FC = () => {
             />
             {mode === 'daily'
               ? `Denní výzva #${dayNumber} • Stejný song pro všechny`
-              : 'Nekonečný mód • Trénuj na celé diskografii Viktora Sheena'}
+              : 'Nekonečný mód • Trénuj na celé diskografii Viktora Sheena & BUKA'}
           </span>
           <span className="font-mono text-slate-500">
             {songs.length} tracků v databázi
@@ -338,7 +338,7 @@ export const App: React.FC = () => {
         )}
       </main>
 
-      <footer className="relative z-10 w-full py-4 text-center text-xs text-slate-500 border-t border-white/[0.06]">
+      <footer className="relative z-0 mt-auto w-full py-4 text-center text-xs text-slate-500 border-t border-white/[0.06] bg-[#08090c]">
         <p>
           Sheendle • Hudební ukázky a obaly alb poskytuje Apple Music / iTunes
           API

@@ -39,9 +39,16 @@ export const GuessList: React.FC<GuessListProps> = ({
                     className="w-9 h-9 rounded-lg object-cover border border-emerald-400/30 shrink-0"
                   />
                   <div className="min-w-0">
-                    <p className="text-sm font-bold text-white truncate">
-                      {attempt.song.title}
-                    </p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm font-bold text-white truncate">
+                        {attempt.song.title}
+                      </p>
+                      {attempt.song.isFeat && (
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-500/25 text-emerald-200 border border-emerald-400/40 shrink-0">
+                          Feat
+                        </span>
+                      )}
+                    </div>
                     <p className="text-xs text-emerald-300/90 truncate">
                       {attempt.song.album} ({attempt.song.releaseYear})
                     </p>
@@ -75,6 +82,11 @@ export const GuessList: React.FC<GuessListProps> = ({
                       <p className="text-sm font-semibold text-rose-100 truncate">
                         {attempt.song.title}
                       </p>
+                      {attempt.song.isFeat && (
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-200 border border-rose-400/30 shrink-0">
+                          Feat
+                        </span>
+                      )}
                       {isSameAlbum && (
                         <span className="text-[10px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 shrink-0">
                           Stejné album

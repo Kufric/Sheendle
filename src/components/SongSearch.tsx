@@ -28,21 +28,31 @@ export const SongSearch: React.FC<SongSearchProps> = ({
   const inputRef = useRef<HTMLInputElement | null>(null);
   const listRef = useRef<HTMLUListElement | null>(null);
 
-  // Filter tracks accent-insensitively by song title, album name, or artist
+  // Filter tracks accent-insensitively by song title, album name, artist, or "feat"
   const filteredSongs = useMemo(() => {
     const normalizedQuery = removeDiacritics(query);
     if (!normalizedQuery) {
-      return songs.slice(0, 30);
+      return songs.slice(0, 40);
     }
 
     const tokens = normalizedQuery.split(/\s+/).filter(Boolean);
 
     return songs
       .filter((song) => {
+        // Strip literal "(feat." from non-feat solo tracks so searching "feat" exclusively returns Viktor's guest features
+        const cleanedTitle = song.title.replace(/\bf(ea)?t\.?\b/gi, '');
+        const cleanedAlbum = song.album.replace(/\bf(ea)?t\.?\b/gi, '');
+        const featTag = song.isFeat ? 'feat hostovacka' : '';
         const searchable = removeDiacritics(
-          `${song.title} ${song.album} ${song.artist}`
+          `${cleanedTitle} ${cleanedAlbum} ${song.artist} ${featTag}`
         );
-        return tokens.every((token) => searchable.includes(token));
+
+        return tokens.every((token) => {
+          if (token === 'feat' || token === 'ft' || token === 'feat.') {
+            return Boolean(song.isFeat);
+          }
+          return searchable.includes(token);
+        });
       })
       .sort((a, b) => {
         const aTitle = removeDiacritics(a.title);
@@ -53,7 +63,7 @@ export const SongSearch: React.FC<SongSearchProps> = ({
         if (!aStarts && bStarts) return 1;
         return a.title.localeCompare(b.title, 'cs');
       })
-      .slice(0, 35);
+      .slice(0, 40);
   }, [songs, query]);
 
   // Close dropdown on outside click
@@ -177,11 +187,16 @@ export const SongSearch: React.FC<SongSearchProps> = ({
   };
 
   return (
-    <div ref={containerRef} className="relative w-full z-20">
+    <div
+      ref={containerRef}
+      className={`relative w-full z-30 transition-all ${
+        isOpen && !disabled ? 'pb-76' : ''
+      }`}
+    >
       <form onSubmit={handleFormSubmit} className="flex items-stretch gap-2">
         <div className="relative flex-1">
           <label htmlFor={inputId} className="sr-only">
-            Vyhledej písničku nebo album Viktora Sheena
+            Vyhledej písničku nebo album Viktora Sheena / BUKA
           </label>
           <Search className="w-4 h-4 text-[var(--accent-light)] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
@@ -202,7 +217,7 @@ export const SongSearch: React.FC<SongSearchProps> = ({
               setActiveIndex(0);
             }}
             onKeyDown={handleKeyDown}
-            placeholder="Zadej název tracku nebo alba (např. Černobílej svět, Safír...)"
+            placeholder="Zadej název tracku, alba, BUKA nebo 'feat'..."
             autoComplete="off"
             className="w-full pl-10 pr-9 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.06] focus:bg-[#11131a] border border-white/15 focus:border-[var(--accent-bright)] text-sm text-white placeholder:text-slate-500 outline-none transition-all shadow-inner disabled:opacity-50"
           />
@@ -244,7 +259,7 @@ export const SongSearch: React.FC<SongSearchProps> = ({
           id={listboxId}
           role="listbox"
           aria-label="Návrhy písniček"
-          className="sheendle-scroll absolute left-0 right-0 mt-2 max-h-72 overflow-y-auto rounded-2xl bg-[#0e1017]/95 backdrop-blur-2xl border border-[var(--accent-border)] shadow-[0_16px_48px_rgba(0,0,0,0.85)] divide-y divide-white/[0.06]"
+          className="sheendle-scroll absolute left-0 right-0 top-[3.4rem] z-50 max-h-72 overflow-y-auto rounded-2xl bg-[#0c0e14] border border-[var(--accent-border)] shadow-[0_20px_60px_rgba(0,0,0,0.95)] divide-y divide-white/[0.06]"
         >
           {filteredSongs.length === 0 ? (
             <li className="px-4 py-6 text-center text-sm text-slate-400">
@@ -255,6 +270,7 @@ export const SongSearch: React.FC<SongSearchProps> = ({
               const alreadyGuessed = guessedSongIds.has(song.id);
               const isHighlighted = idx === activeIndex;
               const isSelected = selectedSong?.id === song.id;
+              const isBuka = song.artist.toUpperCase().includes('BUKA');
 
               return (
                 <li
@@ -289,11 +305,25 @@ export const SongSearch: React.FC<SongSearchProps> = ({
                       className="w-10 h-10 rounded-lg object-cover border border-white/10 shrink-0"
                     />
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold text-white truncate">
-                        {song.title}
-                      </p>
+                      <div className="flex items-center gap-1.5">
+                        <p className="text-sm font-semibold text-white truncate">
+                          {song.title}
+                        </p>
+                        {song.isFeat && (
+                          <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-[var(--accent-surface-strong)] text-[var(--accent-pale)] border border-[var(--accent-border)] shrink-0">
+                            Feat
+                          </span>
+                        )}
+                        {isBuka && !song.isFeat && (
+                          <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/10 text-slate-200 border border-white/15 shrink-0">
+                            BUKA
+                          </span>
+                        )}
+                      </div>
                       <p className="text-xs text-slate-400 truncate">
-                        {song.album} • {song.releaseYear}
+                        {song.isFeat
+                          ? `${song.artist} • ${song.album} (${song.releaseYear})`
+                          : `${song.album} • ${song.releaseYear}`}
                       </p>
                     </div>
                   </div>
