@@ -44,7 +44,7 @@ export const Header: React.FC<HeaderProps> = ({
                 </span>
               </div>
               <p className="text-xs text-slate-400 leading-none mt-0.5">
-                Poznej track Viktora Sheena podle zvuku
+                Poznej track Viktora Sheena co nejrychleji
               </p>
             </div>
           </div>
