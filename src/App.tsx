@@ -31,6 +31,7 @@ import { SongSearch } from './components/SongSearch';
 import { ResultCard } from './components/ResultCard';
 import { StatsModal } from './components/StatsModal';
 import { HelpModal } from './components/HelpModal';
+import { LegalModal } from './components/LegalModal';
 import { UnlimitedFiltersBar } from './components/UnlimitedFiltersBar';
 
 const songs: Song[] = songsData as Song[];
@@ -50,6 +51,8 @@ export const App: React.FC = () => {
   const [mode, setMode] = useState<GameMode>('daily');
   const [isStatsOpen, setIsStatsOpen] = useState(false);
   const [isHelpOpen, setIsHelpOpen] = useState(false);
+  const [isLegalOpen, setIsLegalOpen] = useState(false);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
 
   // Statistics state
   const [stats, setStats] = useState<StatsData>(() => {
@@ -334,22 +337,38 @@ export const App: React.FC = () => {
       style={{ '--game-mode': mode } as React.CSSProperties}
       className="theme-reactive min-h-dvh flex flex-col bg-[#08090c] text-slate-100 relative overflow-x-hidden transition-colors duration-500"
     >
-      {/* Ambient Background Glow over deep black (Turquoise in Daily, Red in Unlimited) */}
+      {/* Ambient Background Glow & Halftone Portraits over deep black */}
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 overflow-hidden z-0"
+        className="halftone-stage pointer-events-none fixed inset-0 overflow-hidden z-0 select-none"
       >
-        <div
-          style={{ backgroundColor: 'var(--ambient-1)' }}
-          className="absolute -top-40 left-1/4 w-[28rem] h-[28rem] rounded-full blur-[135px] transition-colors duration-700"
+        {/* Ambient Background Glow Canvas (GPU-efficient native radial-gradients, 0 blur shader overhead) */}
+        <div aria-hidden="true" className="ambient-glow-canvas" />
+
+        {/* Left Portrait: Turquoise Halftone (Daily Challenge) */}
+        <img
+          src="./viktor-halftone-left.jpg?v=2"
+          alt=""
+          width="1000"
+          height="1000"
+          className={`halftone-portrait absolute top-1/2 -translate-y-1/2 left-[-7rem] sm:left-[-4rem] lg:left-[calc(50%-45rem)] w-[24rem] sm:w-[28rem] lg:w-[33rem] xl:w-[36rem] aspect-square object-contain transition-all duration-700 ease-out ${
+            mode === 'daily'
+              ? 'opacity-35 sm:opacity-55 lg:opacity-85 xl:opacity-95 translate-x-0 scale-100'
+              : 'opacity-0 -translate-x-10 scale-95'
+          }`}
         />
-        <div
-          style={{ backgroundColor: 'var(--ambient-2)' }}
-          className="absolute top-1/3 -right-32 w-[26rem] h-[26rem] rounded-full blur-[145px] transition-colors duration-700"
-        />
-        <div
-          style={{ backgroundColor: 'var(--ambient-3)' }}
-          className="absolute -bottom-40 left-1/3 w-[28rem] h-[28rem] rounded-full blur-[135px] transition-colors duration-700"
+
+        {/* Right Portrait: Crimson Red Halftone (Unlimited Mode) */}
+        <img
+          src="./viktor-halftone-right.png?v=9"
+          alt=""
+          width="1000"
+          height="1000"
+          className={`halftone-portrait halftone-portrait-right absolute top-1/2 -translate-y-1/2 right-[-5rem] sm:right-[-2rem] lg:right-auto lg:left-[calc(50%+14rem)] xl:left-[calc(50%+16rem)] w-[24rem] sm:w-[28rem] lg:w-[33rem] xl:w-[36rem] aspect-square object-contain transition-all duration-700 ease-out ${
+            mode === 'unlimited'
+              ? 'opacity-35 sm:opacity-55 lg:opacity-80 xl:opacity-90 translate-x-0 scale-100'
+              : 'opacity-0 translate-x-10 scale-95'
+          }`}
         />
       </div>
 
@@ -358,6 +377,7 @@ export const App: React.FC = () => {
         onModeChange={setMode}
         dateLabel={formatCzechDate(todayKey, false)}
         dailyCompleted={dailyState.status !== 'playing'}
+        isPlaying={isAudioPlaying}
         onOpenStats={() => setIsStatsOpen(true)}
         onOpenHelp={() => setIsHelpOpen(true)}
       />
@@ -417,6 +437,7 @@ export const App: React.FC = () => {
           attemptIndex={activeAttempts.length}
           status={activeStatus}
           onSkip={handleSkip}
+          onPlaybackChange={setIsAudioPlaying}
         />
 
         {/* Search & Autocomplete Input */}
@@ -430,11 +451,28 @@ export const App: React.FC = () => {
         )}
       </main>
 
-      <footer className="relative z-0 mt-auto w-full py-4 text-center text-xs text-slate-500 border-t border-white/[0.06] bg-[#08090c]">
-        <p>
-          Sheendle • Hudební ukázky a obaly alb poskytuje Apple Music / iTunes
-          API
-        </p>
+      <footer className="relative z-10 mt-auto w-full py-4 px-4 text-xs text-slate-500 border-t border-white/[0.06] bg-[#08090c]">
+        <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5 text-center sm:text-left">
+          <p className="text-slate-400">
+            Sheendle • Neoficiální fanouškovská hra
+          </p>
+          <div className="flex items-center gap-3 text-slate-400">
+            <button
+              type="button"
+              onClick={() => setIsLegalOpen(true)}
+              className="hover:text-white underline underline-offset-2 transition-colors cursor-pointer"
+            >
+              O projektu & Právní informace
+            </button>
+            <span className="text-slate-600">•</span>
+            <a
+              href="mailto:kufriccz@gmail.com"
+              className="hover:text-white transition-colors cursor-pointer"
+            >
+              kufriccz@gmail.com
+            </a>
+          </div>
+        </div>
       </footer>
 
       <StatsModal
@@ -444,6 +482,8 @@ export const App: React.FC = () => {
       />
 
       <HelpModal isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
+
+      <LegalModal isOpen={isLegalOpen} onClose={() => setIsLegalOpen(false)} />
     </div>
   );
 };

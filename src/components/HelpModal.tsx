@@ -72,7 +72,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
             <CircleHelp className="w-5 h-5" />
           </div>
           <h2 id={titleId} className="text-lg font-extrabold text-white">
-            Jak hrát Sheendle
+            Jak hrát?
           </h2>
         </div>
 
@@ -128,7 +128,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           <div>
             <p className="mb-1">
               <strong className="text-[#7fd4ea]">Denní výzva:</strong> Každý den o
-              půlnoci se odemkne 1 společný track pro všechny hráče (tyrkysový režim).
+              půlnoci se odemkne 1 společný track pro všechny hráče.
             </p>
             <p>
               <strong className="text-red-400">Nekonečný mód:</strong> Hraj bez

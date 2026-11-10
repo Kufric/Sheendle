@@ -7,6 +7,7 @@ interface HeaderProps {
   onModeChange: (mode: GameMode) => void;
   dateLabel: string;
   dailyCompleted: boolean;
+  isPlaying?: boolean;
   onOpenStats: () => void;
   onOpenHelp: () => void;
 }
@@ -16,6 +17,7 @@ export const Header: React.FC<HeaderProps> = ({
   onModeChange,
   dateLabel,
   dailyCompleted,
+  isPlaying = false,
   onOpenStats,
   onOpenHelp,
 }) => {
@@ -26,7 +28,11 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center justify-between w-full sm:w-auto">
           <div className="flex items-center gap-2.5">
             <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--accent-from)] to-[var(--accent-to)] border border-[var(--accent-border-strong)] shadow-[0_0_20px_var(--accent-glow)] transition-all duration-500">
-              <Disc3 className="w-5 h-5 text-[var(--accent-pale)] animate-[spin_10s_linear_infinite]" />
+              <Disc3
+                className={`w-5 h-5 text-[var(--accent-pale)] will-change-transform [transform:translateZ(0)] transition-transform duration-300 ${
+                  isPlaying ? 'animate-[spin_3s_linear_infinite]' : ''
+                }`}
+              />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -34,7 +40,7 @@ export const Header: React.FC<HeaderProps> = ({
                   SHEENDLE
                 </h1>
                 <span className="text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--accent-surface-strong)] text-[var(--accent-pale)] border border-[var(--accent-border)] transition-all duration-500">
-                  {mode === 'daily' ? 'CZ' : '∞'}
+                  {mode === 'daily' ? 'XYZ' : '∞'}
                 </span>
               </div>
               <p className="text-xs text-slate-400 leading-none mt-0.5">

@@ -21,6 +21,7 @@ interface AudioPlayerProps {
   attemptIndex: number;
   status: GameStatus;
   onSkip: () => void;
+  onPlaybackChange?: (playing: boolean) => void;
 }
 
 // Piecewise visual positions (%) for [0, 0.1, 0.5, 2.0, 4.0, 8.0, 15.0]
@@ -48,6 +49,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   attemptIndex,
   status,
   onSkip,
+  onPlaybackChange,
 }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const sliderRef = useRef<HTMLInputElement | null>(null);
@@ -68,6 +70,10 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
     return saved !== null ? Number(saved) : 80;
   });
   const [isMuted, setIsMuted] = useState(false);
+
+  useEffect(() => {
+    onPlaybackChange?.(isPlaying);
+  }, [isPlaying, onPlaybackChange]);
 
   const isGameOver = status === 'won' || status === 'lost';
   const clampedAttemptIdx = Math.min(attemptIndex, MAX_ATTEMPTS - 1);
@@ -469,7 +475,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
         </div>
 
         {/* Right: Skip Button */}
-        <div className="flex items-center justify-center sm:justify-end w-full sm:w-44 order-3">
+        <div className="flex items-center justify-center sm:justify-end w-full sm:w-auto order-3">
           {!isGameOver && (
             <button
               type="button"
@@ -479,12 +485,12 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
                 }
                 onSkip();
               }}
-              className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.05] hover:bg-[var(--accent-surface-strong)] border border-white/15 hover:border-[var(--accent-border-strong)] text-xs sm:text-sm font-semibold text-slate-200 hover:text-white transition-all cursor-pointer"
+              className="w-full sm:w-auto min-w-[11.5rem] flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl bg-white/[0.05] hover:bg-[var(--accent-surface-strong)] border border-white/15 hover:border-[var(--accent-border-strong)] text-xs sm:text-[13px] font-semibold text-slate-200 hover:text-white transition-all cursor-pointer whitespace-nowrap"
             >
               <FastForward className="w-4 h-4 text-[var(--accent-light)] shrink-0" />
-              <span>
+              <span className="whitespace-nowrap tabular-nums">
                 {skipBonusSeconds !== null
-                  ? `Přeskočit (+${skipBonusSeconds} s)`
+                  ? `Přeskočit (+${String(skipBonusSeconds).replace('.', ',')}\u00A0s)`
                   : 'Přeskočit (Odkrýt)'}
               </span>
             </button>

@@ -23,6 +23,8 @@
     --ambient-1: rgba(32, 80, 96, 0.28);
     --ambient-2: rgba(22, 71, 88, 0.22);
     --ambient-3: rgba(12, 62, 79, 0.25);
+    --ambient-4: rgba(41, 122, 148, 0.18);
+    --ambient-5: rgba(22, 71, 88, 0.16);
   }
 
   /* Unlimited Mode: Red palette (modern-web-guidance: design-token-reactivity) */
@@ -42,9 +44,11 @@
     --accent-border-strong: rgba(252, 165, 165, 0.58);
     --accent-glow: rgba(220, 38, 38, 0.45);
     --accent-glow-strong: rgba(239, 68, 68, 0.75);
-    --ambient-1: rgba(185, 28, 28, 0.22);
-    --ambient-2: rgba(153, 27, 27, 0.18);
-    --ambient-3: rgba(127, 29, 29, 0.2);
+    --ambient-1: rgba(220, 38, 38, 0.35);
+    --ambient-2: rgba(185, 28, 28, 0.32);
+    --ambient-3: rgba(153, 27, 27, 0.28);
+    --ambient-4: rgba(239, 68, 68, 0.26);
+    --ambient-5: rgba(127, 29, 29, 0.30);
   }
 
   @container style(--game-mode: unlimited) {
@@ -213,15 +217,75 @@ input[type="range"].sheendle-slider:focus-visible {
   border-radius: 6px;
 }
 
-@keyframes pulse-glow {
+/* GPU-efficient Pulse Glow using compositor-only opacity and scale (0 repaint cycles) */
+@keyframes pulse-glow-ring {
   0%, 100% {
-    box-shadow: 0 0 25px -4px var(--accent-glow), 0 0 50px -10px var(--accent-surface-strong);
+    opacity: 0.35;
+    transform: scale(0.96) translateZ(0);
   }
   50% {
-    box-shadow: 0 0 38px 2px var(--accent-glow-strong), 0 0 70px -5px var(--accent-glow);
+    opacity: 0.85;
+    transform: scale(1.08) translateZ(0);
   }
 }
 
 .animate-pulse-glow {
-  animation: pulse-glow 2.4s infinite ease-in-out;
+  position: relative;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.animate-pulse-glow::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, var(--accent-glow-strong) 0%, transparent 72%);
+  animation: pulse-glow-ring 2.6s infinite ease-in-out;
+  pointer-events: none;
+  z-index: -1;
+  will-change: opacity, transform;
+  transform: translateZ(0);
+}
+
+/* Ambient Stage & High-Performance Radial Gradient Glows (Single native background layer, 0 blur shader overhead) */
+.ambient-glow-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle 28rem at 25% 0%, var(--ambient-1) 0%, transparent 70%),
+    radial-gradient(circle 32rem at 95% 25%, var(--ambient-2) 0%, transparent 70%),
+    radial-gradient(circle 28rem at 35% 100%, var(--ambient-3) 0%, transparent 70%),
+    radial-gradient(circle 24rem at 0% 15%, var(--ambient-4) 0%, transparent 70%),
+    radial-gradient(circle 28rem at 95% 75%, var(--ambient-5) 0%, transparent 70%);
+  contain: strict;
+  transform: translateZ(0);
+}
+
+/* Halftone Side Portraits (modern-web-guidance: visual-effects) */
+.halftone-stage {
+  isolation: isolate;
+  contain: layout style;
+}
+
+.halftone-portrait {
+  mix-blend-mode: screen;
+  will-change: opacity, transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-mask-image:
+    radial-gradient(ellipse 80% 82% at 50% 46%, #000 58%, transparent 100%),
+    linear-gradient(to top, transparent 0%, #000 18%, #000 92%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(ellipse 80% 82% at 50% 46%, #000 58%, transparent 100%),
+    linear-gradient(to top, transparent 0%, #000 18%, #000 92%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.halftone-portrait-right {
+  mix-blend-mode: normal;
+  -webkit-mask-image: none;
+  mask-image: none;
 }

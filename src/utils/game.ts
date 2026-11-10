@@ -71,6 +71,23 @@ export function getDailySong(songs: Song[], dateKey: string): Song {
     [indices[i], indices[j]] = [indices[j], indices[i]];
   }
 
+  // Ensure "Spaceship" is pinned for today (2026-11-10, Day 13) without duplicates
+  if (cycleIndex === 0) {
+    const todayPos = 12; // 2026-11-10 (Day 13)
+    const spaceshipIdx = songs.findIndex(
+      (s) => s.title.toLowerCase() === 'spaceship'
+    );
+    if (spaceshipIdx !== -1) {
+      const currentPos = indices.indexOf(spaceshipIdx);
+      if (currentPos !== -1 && currentPos !== todayPos) {
+        [indices[todayPos], indices[currentPos]] = [
+          indices[currentPos],
+          indices[todayPos],
+        ];
+      }
+    }
+  }
+
   // Also mix in the dateKey for any pre-epoch dates
   if (dayNum === 1 && dateKey !== '2026-10-29') {
     const fallbackIdx = hashSeed(`sheendle-date-${dateKey}`) % songs.length;

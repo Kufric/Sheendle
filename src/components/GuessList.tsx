@@ -129,7 +129,7 @@ export const GuessList: React.FC<GuessListProps> = ({
           return (
             <div
               key={index}
-              className="flex items-center justify-between gap-3 px-3.5 py-3 rounded-xl bg-[var(--accent-surface)] border border-[var(--accent-border-strong)] shadow-[0_0_22px_var(--accent-surface-strong)] transition-all duration-300"
+              className="flex items-center justify-between gap-3 px-3.5 py-3 rounded-xl bg-[#0b0d13]/90 backdrop-blur-md border border-[var(--accent-border-strong)] shadow-[0_0_22px_var(--accent-surface-strong)] transition-all duration-300"
             >
               <div className="flex items-center gap-2.5">
                 <Volume2 className="w-4 h-4 text-[var(--accent-light)] animate-pulse shrink-0" />
@@ -149,15 +149,15 @@ export const GuessList: React.FC<GuessListProps> = ({
         return (
           <div
             key={index}
-            className="flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.02] border border-white/[0.06] text-slate-600"
+            className="flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl bg-[#0b0d13]/88 backdrop-blur-sm border border-white/[0.07] text-slate-500"
           >
             <div className="flex items-center gap-2.5">
-              <Lock className="w-3.5 h-3.5 text-slate-700 shrink-0" />
-              <span className="text-xs sm:text-sm text-slate-600">
+              <Lock className="w-3.5 h-3.5 text-slate-600 shrink-0" />
+              <span className="text-xs sm:text-sm text-slate-500">
                 {index + 1}. pokus
               </span>
             </div>
-            <span className="text-xs font-mono text-slate-600 px-2 py-0.5 rounded-md bg-white/[0.02] shrink-0">
+            <span className="text-xs font-mono text-slate-400 px-2 py-0.5 rounded-md bg-white/[0.04] shrink-0">
               {duration}s
             </span>
           </div>
