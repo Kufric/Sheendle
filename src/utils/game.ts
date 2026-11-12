@@ -71,18 +71,32 @@ export function getDailySong(songs: Song[], dateKey: string): Song {
     [indices[i], indices[j]] = [indices[j], indices[i]];
   }
 
-  // Ensure "Spaceship" is pinned for today (2026-11-10, Day 13) without duplicates
+  // Ensure past pinned days remain stable without duplicates
   if (cycleIndex === 0) {
-    const todayPos = 12; // 2026-11-10 (Day 13)
+    const day13Pos = 12; // 2026-11-10 (Day 13) -> Spaceship
     const spaceshipIdx = songs.findIndex(
       (s) => s.title.toLowerCase() === 'spaceship'
     );
     if (spaceshipIdx !== -1) {
       const currentPos = indices.indexOf(spaceshipIdx);
-      if (currentPos !== -1 && currentPos !== todayPos) {
-        [indices[todayPos], indices[currentPos]] = [
+      if (currentPos !== -1 && currentPos !== day13Pos) {
+        [indices[day13Pos], indices[currentPos]] = [
           indices[currentPos],
-          indices[todayPos],
+          indices[day13Pos],
+        ];
+      }
+    }
+
+    const day15Pos = 14; // 2026-11-12 (Day 15) -> Vata
+    const vataIdx = songs.findIndex(
+      (s) => s.title.toLowerCase() === 'vata'
+    );
+    if (vataIdx !== -1) {
+      const currentPos = indices.indexOf(vataIdx);
+      if (currentPos !== -1 && currentPos !== day15Pos) {
+        [indices[day15Pos], indices[currentPos]] = [
+          indices[currentPos],
+          indices[day15Pos],
         ];
       }
     }
